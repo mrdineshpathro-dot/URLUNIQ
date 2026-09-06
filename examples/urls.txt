@@ -1,0 +1,8 @@
+HTTP://EXAMPLE.COM:80/
+http://example.com
+https://EXAMPLE.com/
+https://example.com/#home
+https://example.com
+https://example.com/search?q=1&utm_source=test
+https://example.com/search?utm_source=test&q=1
+https://example.com/search?q=1

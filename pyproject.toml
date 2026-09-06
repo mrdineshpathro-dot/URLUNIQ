@@ -1,0 +1,111 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "urluniq"
+version = "2.0.0"
+description = "URLUNIQ 2.0 - Advanced URL Normalization, Canonicalization & Deduplication Framework"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "mrdineshpathro-dot" }]
+requires-python = ">=3.10"
+keywords = [
+    "url",
+    "normalization",
+    "canonicalization",
+    "deduplication",
+    "bugbounty",
+    "recon",
+    "security",
+    "osint",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Security",
+    "Topic :: Utilities",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.4",
+    "black>=24.0",
+    "mypy>=1.8",
+]
+performance = [
+    "xxhash>=3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mrdineshpathro-dot/URLUNIQ"
+Repository = "https://github.com/mrdineshpathro-dot/URLUNIQ"
+Changelog = "https://github.com/mrdineshpathro-dot/URLUNIQ/blob/main/CHANGELOG.md"
+
+[project.scripts]
+urluniq = "urluniq.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+urluniq = ["data/*.toml", "data/*.txt", "py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # bugbear
+    "UP",  # pyupgrade
+    "SIM", # simplify
+]
+ignore = [
+    "SIM108", # ternary is not always clearer
+]
+
+[tool.mypy]
+python_version = "3.10"
+mypy_path = "src"
+packages = ["urluniq"]
+warn_unused_ignores = true
+warn_redundant_casts = true
+no_implicit_optional = true
+check_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = ["xxhash"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["tests.*", "benchmarks.*"]
+ignore_errors = true

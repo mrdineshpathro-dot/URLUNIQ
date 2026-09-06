@@ -1,0 +1,15 @@
+id,url,source
+1,HTTP://EXAMPLE.COM:80/,crawl-a
+2,http://example.com,crawl-a
+3,https://EXAMPLE.com/,crawl-b
+4,https://example.com/#home,crawl-b
+5,https://example.com,crawl-c
+6,https://example.com/search?q=1&utm_source=test,crawl-c
+7,https://example.com/search?utm_source=test&q=1,crawl-c
+8,https://example.com/search?q=1,crawl-c
+9,https://api.example.com/v1/users?page=1,crawl-d
+10,https://api.example.com/v1/users?page=2,crawl-d
+11,https://example.com/static/app.js,crawl-d
+12,https://example.com/static/logo.png,crawl-d
+13,https://example.com/login?next=/dashboard,crawl-e
+14,https://example.com/reports/q3.pdf,crawl-e

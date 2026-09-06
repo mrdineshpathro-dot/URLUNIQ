@@ -12,10 +12,6 @@
 [![Tests](https://img.shields.io/badge/tests-354%20passing-7ee787)](tests)
 [![Zero runtime deps](https://img.shields.io/badge/dependencies-0-success)](pyproject.toml)
 
-**Author:** [mrdineshpathro-dot](https://github.com/mrdineshpathro-dot) &nbsp;·&nbsp;
-**GitHub:** https://github.com/mrdineshpathro-dot &nbsp;·&nbsp;
-**YouTube:** https://www.youtube.com/@GithubHacker
-
 URLUNIQ turns messy crawled, scraped and recon URL lists into clean,
 deduplicated, classified datasets — **completely offline**. Built for
 bug-bounty reconnaissance, security research, web-asset organization,

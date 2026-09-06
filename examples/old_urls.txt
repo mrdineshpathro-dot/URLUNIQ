@@ -1,0 +1,6 @@
+https://example.com/
+https://example.com/search?q=1
+https://api.example.com/v1/users?page=1
+https://example.com/static/app.js
+https://example.com/login
+https://old.example.com/legacy/page

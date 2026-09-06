@@ -1,0 +1,103 @@
+# URLUNIQ 2.0 default configuration.
+#
+# CLI arguments always override values set here.  Profile presets live under
+# [profiles.*] and override the built-in presets for that profile; the
+# [normalization] section applies to *every* profile before profile-specific
+# values.
+
+# Default normalization profile: safe | standard | aggressive
+profile = "standard"
+
+[normalization]
+# Global normalization switches (applied on top of profile presets).
+# By default everything here mirrors the "standard" behaviour; uncomment to
+# change globally, or use [profiles.X] for one profile only.
+# add_trailing_slash = false
+# strip_www = false
+# upgrade_http = false
+
+[profiles.safe]
+# Safe profile customizations (example):
+# idn_to_ascii = false
+# remove_fragment = false
+
+[profiles.standard]
+
+[profiles.aggressive]
+# Aggressive profile customizations (example):
+# strip_www = true
+# upgrade_http = false
+# remove_empty_params = true
+
+[canonicalization]
+# Rules used to build the *canonical identity* compared by
+# --dedupe canonical / --dedupe smart.
+remove_tracking_params = true
+strip_default_index = true
+add_trailing_slash = true
+# strip_www = false
+# remove_empty_params = false
+
+[query]
+case_sensitive_names = false
+duplicate_keep = "first"          # keep "first" or "last" duplicate parameter
+# keep_params = []                # allowlist: keep only these parameters
+# drop_params = []                # denylist: always drop these parameters
+# tracking_params = []            # extra tracking parameters beyond the file
+tracking_params_file = "tracking_params.txt"
+
+[dedupe]
+mode = "normalized"               # exact|normalized|canonical|host|path|path_query|smart
+hash_algorithm = "sha256"         # sha256|sha1|md5|xxhash
+smart_ignore_tracking = true
+smart_ignore_session = true
+smart_ignore_empty = true
+
+[classification]
+enabled = true
+extensions_file = "extensions.txt"
+
+[filters]
+# Static filters applied to every run (CLI flags extend these lists).
+# include_host = []
+# exclude_host = []
+# include_extension = []
+# exclude_extension = ["jpg", "png", "gif"]
+# include_path = []
+# exclude_path = []
+# include_regex = []              # explicit and optional
+# exclude_regex = []
+# domain = ""
+include_subdomains = false
+
+[output]
+format = "txt"                    # txt|csv|json|jsonl
+sort = "none"                     # none|url|host|category
+top_n = 10
+csv_header = true
+duplicates_max_groups = 1000
+duplicates_max_variants = 50
+
+[performance]
+workers = 1
+backend = "memory"                # memory|sqlite
+sqlite_path = "urluniq.db"
+resume = false
+chunk_size = 20000
+progress_interval = 100000
+multiprocess_min_lines = 200000
+process_cache_size = 200000       # per-run cache of processed URLs
+
+[logging]
+file = ""
+format = "text"                   # text|json
+level = "INFO"
+
+[validation]
+allowed_schemes = ["http", "https", "ftp", "ftps", "ws", "wss"]
+max_url_length = 8192
+
+[plugins]
+enabled = true
+example_tracking = false
+example_classifier = false

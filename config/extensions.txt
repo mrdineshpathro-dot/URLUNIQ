@@ -1,0 +1,12 @@
+# URLUNIQ extension map: "category: ext1, ext2, ..."
+# Categories recognized by the heuristic classifier:
+#   js css image document static html api
+# Unknown extensions fall back to Unknown / Extensionless / Parameterized.
+
+js: js, mjs, cjs, jsx, ts, tsx
+css: css, scss, sass, less
+image: jpg, jpeg, png, gif, webp, svg, bmp, ico, tiff, avif, heic
+document: pdf, doc, docx, xls, xlsx, ppt, pptx, odt, ods, odp, txt, rtf, xml, csv, epub
+static: map, woff, woff2, ttf, otf, eot, mp4, webm, avi, mov, mp3, wav, ogg, flac, zip, rar, 7z, gz, tar, bz2, swf, iso, dmg, exe, apk, bin
+html: html, htm, xhtml, shtml, phtml, php, php3, php4, php5, php7, pht, asp, asax, aspx, axd, asx, asmx, jsp, jspx, jspa, jsw, jsf, cgi, do, action, pl, py, rb, cfml, cfm, shtm
+api: json, graphql, yaml, yml, soap

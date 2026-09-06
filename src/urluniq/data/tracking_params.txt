@@ -1,0 +1,75 @@
+# URLUNIQ tracking-parameter list (one parameter name per line).
+# Customize freely - this file is the intended extension point, so the list
+# is configuration, never hard-coded behaviour.
+# Lines starting with '#' are comments; matching is case-insensitive by
+# default (see [query] case_sensitive_names in default.toml).
+
+# Google Analytics / Ads
+utm_source
+utm_medium
+utm_campaign
+utm_term
+utm_content
+utm_id
+utm_source_platform
+utm_serial
+utm_creative_format
+utm_marketing_tactic
+gclid
+gclsrc
+dclid
+gbraid
+wbraid
+
+# Meta / Facebook
+fbclid
+fb_action_ids
+fb_action_types
+fb_source
+mibextid
+
+# Microsoft / Bing
+msclkid
+
+# Twitter / X, TikTok, LinkedIn, Reddit
+twclid
+ttclid
+li_fat_id
+rtc_ts
+igsh
+igshid
+
+# Mailchimp / email campaigns
+mc_cid
+mc_eid
+# General referral / affiliate noise
+ref
+ref_src
+ref_url
+referer
+yclid
+vero_id
+vero_conv
+wickedid
+oly_anon_id
+oly_enc_id
+srsltid
+spm_idz
+aff_platform
+aff_trace_key
+scm
+spm
+pfr
+_rr_publisher
+
+# Session-ish click identifiers (safe to treat as tracking for dedupe)
+tw_source
+share_source
+share_medium
+si
+feature
+noapp
+app
+vnsource
+cod
+cb

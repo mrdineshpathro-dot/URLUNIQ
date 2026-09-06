@@ -1,0 +1,14 @@
+[
+  {"url": "HTTP://EXAMPLE.COM:80/", "source": "crawl-a"},
+  {"url": "http://example.com", "source": "crawl-a"},
+  {"url": "https://EXAMPLE.com/", "source": "crawl-b"},
+  {"url": "https://example.com/#home", "source": "crawl-b"},
+  {"url": "https://example.com", "source": "crawl-c"},
+  {"url": "https://example.com/search?q=1&utm_source=test", "source": "crawl-c"},
+  {"url": "https://example.com/search?utm_source=test&q=1", "source": "crawl-c"},
+  {"url": "https://example.com/search?q=1", "source": "crawl-c"},
+  {"url": "https://api.example.com/v1/users?page=1", "source": "crawl-d"},
+  {"url": "https://api.example.com/v1/users?page=2", "source": "crawl-d"},
+  {"url": "https://example.com/docs/index.html", "source": "crawl-e"},
+  {"url": "https://example.com/blog/./2026/../2026/notes/", "source": "crawl-e"}
+]
